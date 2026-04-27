@@ -1,0 +1,11 @@
+\begin{tabular}{lllll}
+\toprule
+Metric & Agent 2 (Unshielded) & Agent 3 (Shielded) & Improvement & Statistical Significance \\
+\midrule
+EpRet (Performance) & -2381.67 ± 253.07 & -2200.74 ± 263.38 & +180.93 (+7.60%) & p=0.50, d=-0.60 \\
+EpCost (Safety) & -4,053,984 ± 46,598 & -3,848,374 ± 24,108 & +205,610 (+5.07%) & p=0.0042**, d=-4.78 \\
+CV (Safety) & 1.15% & 0.63% & 45.5% reduction & Highly stable \\
+Training Time & 1.13 hours & 1.32 hours & +16.8% overhead & Acceptable \\
+Throughput (FPS) & 375 FPS & 320 FPS & -14.7% reduction & 0.22ms latency \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,69 @@
+defaults:
+    algo_cfgs:
+        adv_estimation_method: gae
+        clip_ratio: 0.2
+        cost_gamma: 0.99
+        cost_normalize: false
+        cost_value_coef: 0.5
+        critic_norm_coef: 0.001
+        delta: 0.02
+        ent_coef: 0.0
+        kl_early_stop: true
+        lambda_: 0.95
+        max_grad_norm: 0.5
+        nu: 0.1
+        obs_normalize: false
+        penalty_coef: 1.0
+        reward_normalize: false
+        standardized_cost_adv: true
+        standardized_rew_adv: true
+        update_iters: 5
+        use_cost: true
+        use_critic_norm: true
+        use_max_grad_norm: true
+        value_coef: 0.5
+    env_id: IEEE33-v0
+    lagrange_cfgs:
+        cost_limit: 10.0
+        lagrangian_multiplier_init: 0.001
+        lambda_lr: 0.01
+        lambda_optimizer: Adam
+    logger_cfgs:
+        eval_interval: 10000
+        log_dir: train/FOCOPS_smoke
+        log_interval: 1000
+        save_model: true
+        save_model_freq: 10
+        use_tensorboard: true
+        use_wandb: false
+    model_cfgs:
+        action_std: 0.1
+        actor:
+            activation: tanh
+            hidden_sizes:
+            - 64
+            - 64
+            lr: 0.0003
+        actor_type: gaussian_learning
+        critic:
+            activation: tanh
+            hidden_sizes:
+            - 64
+            - 64
+            lr: 0.0003
+        critic_type: mlp
+        exploration_noise_anneal: false
+        exploration_noise_final: 0.0
+        exploration_noise_init: 0.0
+        linear_lr_decay: false
+        use_sde: false
+        weight_initialization_mode: orthogonal
+    train_cfgs:
+        batch_size: 256
+        cost_limit: 10.0
+        device: cpu
+        epochs: 50
+        steps_per_epoch: 1000
+        target_kl: 0.02
+        update_iters: 5
+        vector_env_nums: 1

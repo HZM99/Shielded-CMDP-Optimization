@@ -1,0 +1,16 @@
+Agent,Seed,Episode_Return,Episode_Cost,Shield_Intervention_Rate
+Agent2_Unshielded,0,-2651.30,-4087864,0.00%
+Agent2_Unshielded,1,-2049.67,-3992251,0.00%
+Agent2_Unshielded,2,-2444.04,-4081835,0.00%
+Agent3_Shielded,0,-2441.63,-3862769,100.00%
+Agent3_Shielded,1,-1871.27,-3815289,100.00%
+Agent3_Shielded,2,-2289.31,-3867063,100.00%
+
+Summary Statistics:
+Agent2_Mean,,-2381.67,-4053983,0.00%
+Agent2_Std,,±304.39,±54646,
+Agent3_Mean,,-2200.74,-3848374,100.00%
+Agent3_Std,,±295.24,±28251,
+
+Improvement:
+Difference,,+7.6%,+5.1%,+100.0 pp

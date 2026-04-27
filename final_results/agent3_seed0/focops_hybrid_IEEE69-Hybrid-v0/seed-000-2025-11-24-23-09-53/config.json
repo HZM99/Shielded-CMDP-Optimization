@@ -1,0 +1,84 @@
+{
+    "seed": 0,
+    "env_id": "IEEE69-Hybrid-v0",
+    "exp_name": "focops_hybrid_IEEE69-Hybrid-v0",
+    "algo_cfgs": {
+        "use_cost": true,
+        "cost_gamma": 0.99,
+        "clip_ratio": 0.2,
+        "ent_coef": 0.0,
+        "entropy_coef": 0.0,
+        "value_coef": 0.5,
+        "cost_value_coef": 0.5,
+        "standardized_rew_adv": true,
+        "standardized_cost_adv": true,
+        "reward_normalize": false,
+        "obs_normalize": false,
+        "cost_normalize": false,
+        "use_critic_norm": false,
+        "critic_norm_coef": 0.001,
+        "use_max_grad_norm": true,
+        "max_grad_norm": 0.5,
+        "adv_estimation_method": "gae",
+        "kl_early_stop": true,
+        "update_iters": 5,
+        "steps_per_epoch": 10000,
+        "batch_size": 256,
+        "target_kl": 0.02,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "lam_c": 0.95,
+        "cost_lam": 0.95,
+        "focops_lam": 1.0,
+        "penalty_coef": 1.0,
+        "focops_eta": 0.02
+    },
+    "train_cfgs": {
+        "device": "cpu",
+        "vector_env_nums": 1,
+        "epochs": 100,
+        "steps_per_epoch": 10000,
+        "batch_size": 256,
+        "cost_limit": 10.0
+    },
+    "model_cfgs": {
+        "actor": {
+            "hidden_sizes": [
+                64,
+                64
+            ],
+            "activation": "tanh",
+            "lr": 0.0003
+        },
+        "critic": {
+            "hidden_sizes": [
+                64,
+                64
+            ],
+            "activation": "tanh",
+            "lr": 0.0003
+        },
+        "weight_initialization_mode": "orthogonal",
+        "actor_type": "gaussian_learning",
+        "critic_type": "mlp",
+        "linear_lr_decay": false,
+        "exploration_noise_anneal": false,
+        "exploration_noise_init": 0.0,
+        "exploration_noise_final": 0.0,
+        "use_sde": false,
+        "action_std": 0.1
+    },
+    "logger_cfgs": {
+        "log_dir": "final_results/agent3_seed0",
+        "use_wandb": false,
+        "use_tensorboard": true,
+        "save_model": true,
+        "save_model_freq": 10
+    },
+    "lagrange_cfgs": {
+        "cost_limit": 10.0,
+        "lagrangian_multiplier_init": 0.001,
+        "lambda_lr": 0.01,
+        "lambda_optimizer": "Adam"
+    }
+}

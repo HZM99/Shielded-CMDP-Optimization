@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "rl-constrained-smartgrid-control"
+version = "0.1.0"
+description = ""
+authors = ["Victor Oko <victor4just@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "rl_constrained_smartgrid_control"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pypower = "^5.1.19"
+numpy = "^2.3.3"
+scipy = "^1.16.2"
+autopep8 = "^2.3.2"
+pre-commit = "^4.3.0"
+isort = "^6.0.1"
+flake8 = "^7.3.0"
+flake8-bugbear = "^24.12.12"
+flake8-import-order = "^0.19.2"
+pandas = "^2.3.2"
+matplotlib = "^3.10.6"
+tensorboard = "^2.20.0"
+gymnasium = "^1.2.1"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+known_first_party = "rl_constrained_smartgrid_control"
+default_section = "THIRDPARTY"
+forced_separate = true
+lines_between_types = 1
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E203", "W503"]
+import-order-style = "pep8"
+application-import-names = "rl_constrained_smartgrid_control"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
